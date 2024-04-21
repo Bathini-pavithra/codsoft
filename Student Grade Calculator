@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class StudentGradeCalculator
+{
+    public static void main(String args[])
+    {
+        int TotalSubjects;
+        float TotalMarks=0,AverageMarks;
+        int i;
+        Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the total number of subjects:");
+        TotalSubjects=sc.nextInt();
+        for(i=1; i<=TotalSubjects; i++) { 
+           System.out.print("Enter Marks of Subject" +i+":");
+           TotalMarks = sc.nextFloat();
+        }
+        sc.close();
+        //Calculating average marks
+        AverageMarks= TotalMarks/TotalSubjects;
+        if(AverageMarks>=80)
+        {
+            System.out.print( " Totalmarks: "+TotalMarks+" Averagemarks:"+AverageMarks+",Grade A");
+        }
+        else if(AverageMarks>=60 && AverageMarks<80)
+        {
+           System.out.print("Totalmarks: "+TotalMarks+" Averagemarks:"+AverageMarks+",Grade B");
+        } 
+        else if(AverageMarks>=40 && AverageMarks<60)
+        {
+            System.out.print("Totalmarks: "+TotalMarks+" Averagemarks:"+AverageMarks+",Grade C");
+        }
+        else
+        {
+            System.out.print("Totalmarks: "+TotalMarks+" Averagemarks:"+AverageMarks+",Grade D ");
+        }
+    }
+}
